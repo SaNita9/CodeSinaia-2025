@@ -27,3 +27,4 @@ with open('data.txt', 'w') as file:
         file.write(f"{str(r)} ")
 print(f"{len(keys)}")
 print(min(lkeys))
+print()

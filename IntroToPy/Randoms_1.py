@@ -2,9 +2,9 @@ import random
 
 # Read input parameters from the console
 
-count = 150 # int(input("Number of values?> "))
-min_value = 100 # int(input("Minimum value?> "))
-max_value = 200 # int(input("Maximum value?> "))
+count = 100 # int(input("Number of values?> "))
+min_value = 15 # int(input("Minimum value?> "))
+max_value = 65 # int(input("Maximum value?> "))
 
 print(f"Generating {count} randoms in the range [{min_value}, {max_value}]")
 
@@ -19,9 +19,10 @@ for i in range(0, count):
         randoms_map[r] = []
     randoms_map[r].append(i)
 
+print(randoms_map)
 # Write a text file "randoms_db.txt" with each random on a line, its value followed by the indexes where it occurred
 
-with open("IntroToPy/test.txt", "w") as data_file:
+with open("IntroToPy/randoms_db.txt", "w") as data_file:
     for r in randoms_map.keys():
         data_file.write(f"{r} {randoms_map[r]}\n")
 
