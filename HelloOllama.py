@@ -1,14 +1,14 @@
 import ollama
 
-# Specify the model name
-model_name = "gemma3:1b"
+model_name = "llama3.2"
 
-# Define the prompt
-prompt = "What is the capital of France?"
+prompt = input("prompt: ")
 
-# Send the prompt to the model and get the response
-response = ollama.generate(model=model_name, prompt=prompt)
+# response = ollama.generate(model=model_name, prompt=prompt)
 
-# Print the response
+response = ollama.chat(model=model_name, messages = [{'role': 'user', 'content': prompt}])
+print(response)
+
 print(type(response))
-print(response.response)
+# print(response.response)
+print(response['message']['content'])
